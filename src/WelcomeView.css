@@ -1,0 +1,82 @@
+.welcome-view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  animation: fadeIn 0.5s ease-in-out;
+  min-height: 80vh;
+}
+
+.welcome-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.bot-hero {
+  width: 100%;
+  max-width: 450px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bot-hero img {
+  width: 100%;
+  height: auto;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #333;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.welcome-text strong {
+  font-weight: 700;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.loading-dots span {
+  width: 12px;
+  height: 12px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 1.5s infinite;
+}
+
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.8rem;
+    padding: 0 20px;
+  }
+  .bot-hero {
+    max-width: 300px;
+  }
+}
